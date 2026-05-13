@@ -67,5 +67,5 @@
         "*.sln": "*.csproj",
         "*.slnx": "*.csproj"
     },
-    "dotnet.defaultSolution": "HW 5 test.slnx"
+    "dotnet.defaultSolution": "2D test agani hw 5.slnx"
 }
