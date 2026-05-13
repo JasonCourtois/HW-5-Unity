@@ -11,6 +11,7 @@ public class PlayerControl : MonoBehaviour
 	public LayerMask GroundLayer;
 	private Rigidbody2D ThisBody = null;
 	private Transform ThisTransform = null;
+	private Animator ThisAnimator = null;
 	public CircleCollider2D FeetCollider = null;
 	public bool isGrounded = false;
 	public string HorzAxis = "Horizontal";
@@ -20,7 +21,7 @@ public class PlayerControl : MonoBehaviour
 	public float JumpTimeOut = 1f;
 	private bool CanJump = true;
 	
-	
+	private readonly int MovingBoolHash = Animator.StringToHash("Moving");
 	public bool CanControl = true;
 	public static PlayerControl PlayerInstance = null;
 	
@@ -53,6 +54,7 @@ public class PlayerControl : MonoBehaviour
 		//Get transform and rigid body
 		ThisBody = GetComponent<Rigidbody2D>();
 		ThisTransform = GetComponent<Transform>();
+		ThisAnimator = GetComponent<Animator>();
 
 		
 		//Set static instance
@@ -116,6 +118,7 @@ public class PlayerControl : MonoBehaviour
 		//Update grounded status
 		isGrounded = GetGrounded();
 		float Horz = Input.GetAxis(HorzAxis);
+		ThisAnimator.SetBool(MovingBoolHash, Horz != 0);
 		ThisBody.AddForce(Vector2.right * Horz * MaxSpeed);
 
 		if(Input.GetButton(JumpButton))

@@ -54,7 +54,7 @@ public class QuestGiver : MonoBehaviour
 		}
 
 		if (Status == Quest.QUESTSTATUS.COMPLETE)
-			SceneManager.LoadScene("scene_Level03");
+			SceneManager.LoadScene("scene_Level04");
 
 	}
 }
