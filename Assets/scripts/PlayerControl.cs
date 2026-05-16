@@ -10,7 +10,7 @@ public class PlayerControl : MonoBehaviour
 	public FACEDIRECTION Facing = FACEDIRECTION.FACERIGHT;
 	public LayerMask GroundLayer;
 	private Rigidbody2D ThisBody = null;
-	private Transform ThisTransform = null;
+	private static Transform ThisTransform = null;
 	private Animator ThisAnimator = null;
 	public CircleCollider2D FeetCollider = null;
 	public bool isGrounded = false;
@@ -24,6 +24,8 @@ public class PlayerControl : MonoBehaviour
 	private readonly int MovingBoolHash = Animator.StringToHash("Moving");
 	public bool CanControl = true;
 	public static PlayerControl PlayerInstance = null;
+	public static Vector3 PlayerPosition => new Vector3(ThisTransform.position.x, ThisTransform.position.y + playerHeadOffset, ThisTransform.position.z);
+	private static float playerHeadOffset = 0.4f;
 	
 	//--------------------------------
 	public static float Health
@@ -55,7 +57,6 @@ public class PlayerControl : MonoBehaviour
 		ThisBody = GetComponent<Rigidbody2D>();
 		ThisTransform = GetComponent<Transform>();
 		ThisAnimator = GetComponent<Animator>();
-
 		
 		//Set static instance
 		PlayerInstance = this;
@@ -123,7 +124,7 @@ public class PlayerControl : MonoBehaviour
 
 		if(Input.GetButton(JumpButton))
 			Jump();
-		
+
 		//Clamp velocity
 		ThisBody.linearVelocity = new Vector2(Mathf.Clamp(ThisBody.linearVelocity.x, -MaxSpeed, MaxSpeed), 
 		                                Mathf.Clamp(ThisBody.linearVelocity.y, -Mathf.Infinity, JumpPower));

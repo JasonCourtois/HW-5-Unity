@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 489882}
   - component: {fileID: 21266348}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spr_Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102,7 +102,7 @@ GameObject:
   - component: {fileID: 452174}
   - component: {fileID: 21275904}
   - component: {fileID: 2149769294584814910}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spr_Leg_Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -215,7 +215,7 @@ GameObject:
   m_Component:
   - component: {fileID: 487942}
   - component: {fileID: 21278952}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spr_Arm Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -306,7 +306,7 @@ GameObject:
   m_Component:
   - component: {fileID: 477386}
   - component: {fileID: 21219878}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spr_Arm_Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -397,7 +397,7 @@ GameObject:
   m_Component:
   - component: {fileID: 481878}
   - component: {fileID: 21205976}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spr_Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -495,7 +495,7 @@ GameObject:
   - component: {fileID: 5840288}
   - component: {fileID: 6174574}
   - component: {fileID: 9509376}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -685,7 +685,7 @@ GameObject:
   m_Component:
   - component: {fileID: 484308}
   - component: {fileID: 21270976}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: spr_Leg_Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
