@@ -32,6 +32,25 @@ public class Enemy : MonoBehaviour
         if (Random.Range(0f, 1f) > 0.5) {
             FlipEnemy();
         }
+
+        switch (QuestManager.CurrentDifficulty)
+        {
+            case Difficulty.Easy:
+                _fireRange = 4f;
+                _attackCooldown = 6.5f;
+                _patrolWalkSpeed = 0.8f;
+                break;
+            case Difficulty.Medium:
+                _fireRange = 5f;
+                _attackCooldown = 5f;
+                _patrolWalkSpeed = 1f;
+                break;
+            case Difficulty.Hard:
+                _fireRange = 10f;
+                _attackCooldown = 2f;
+                _patrolWalkSpeed = 1.5f;
+                break;
+        }
     }
 
     private void Update()
@@ -61,7 +80,7 @@ public class Enemy : MonoBehaviour
     {
         _attackTimer = 0f;
         Fireball fireball = Instantiate(fireballPrefab, headLocation, transform.rotation);
-        fireball.SetDirection(direction);
+        fireball.SetupFireball(direction);
     }
 
     private bool IsHittingWall()

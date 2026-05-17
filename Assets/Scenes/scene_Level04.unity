@@ -1448,6 +1448,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemySpawner
       objectReference: {fileID: 0}
+    - target: {fileID: 8148466131130145634, guid: d4d676d744a2b8240965b683f0e1aa55, type: 3}
+      propertyPath: enemyAmount
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

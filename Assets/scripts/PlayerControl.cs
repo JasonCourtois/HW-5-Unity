@@ -5,6 +5,9 @@ using System.Collections;
 //--------------------------------
 public class PlayerControl : MonoBehaviour
 {
+	// How come this isn't appearing in inspector?
+	[SerializeField] private GameObject MenuPrefab;
+	private static GameObject StaticMenuPrefab;
 	//--------------------------------
 	public enum FACEDIRECTION {FACELEFT = -1, FACERIGHT = 1};
 	public FACEDIRECTION Facing = FACEDIRECTION.FACERIGHT;
@@ -60,6 +63,7 @@ public class PlayerControl : MonoBehaviour
 		
 		//Set static instance
 		PlayerInstance = this;
+		StaticMenuPrefab = MenuPrefab;
 	}
 	//--------------------------------
 	void Start()
@@ -143,7 +147,7 @@ public class PlayerControl : MonoBehaviour
 	//Function to kill player
 	static void Die()
 	{
-	
+		Instantiate(StaticMenuPrefab);
 		Destroy(PlayerControl.PlayerInstance.gameObject);
 	}
 	//--------------------------------

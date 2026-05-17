@@ -532,6 +532,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bcfcfed9bdbc0c4cb8d7421013cd9ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MenuPrefab: {fileID: 5223246406009260044, guid: 221f5cba31710aa428a66a838084b40f, type: 3}
   Facing: 1
   GroundLayer:
     serializedVersion: 2

@@ -10,12 +10,20 @@ public class Quest
 	public string QuestName = string.Empty;
 }
 
+public enum Difficulty
+{
+	Easy = 0,
+	Medium = 1,
+	Hard = 2,
+}
+
 public class QuestManager : MonoBehaviour
 {
 	//--------------------------------
 	//All quests in game
 	public Quest[] Quests;
 	private static QuestManager SingletonInstance = null;
+	public static Difficulty CurrentDifficulty = Difficulty.Medium;
 	public static QuestManager ThisInstance
 	{
 		get
